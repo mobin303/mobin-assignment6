@@ -5,7 +5,7 @@ const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
 
-//Enter Key 
+// Enter Key 
 document.getElementById("search")
     .addEventListener("keypress", function (event) {
         if (event.key === 'Enter') {
@@ -42,9 +42,9 @@ const getImages = (query) => {
     fetch(url)
         .then(response => response.json())
         .then(data => showImages(data.hits))
-        .catch(error => displayErr('Something Went Wrong!!! Please try again',error))
+        .catch(error => displayErr('Something Went Wrong!!! Please try again', error))
 }
-//spinner 
+// add spinner 
 const spinner = (show) => {
     const loading = document.getElementById('spinner');
     if (show) {
@@ -54,12 +54,11 @@ const spinner = (show) => {
         loading.classList.add('d-none');
     }
 }
-// error show
-const displayErr= (error) =>{
-   const errorText= document.getElementById('error');
-   errorText.innerText= error;
+//add catch error
+const displayErr = (error) => {
+    const errorText = document.getElementById('error');
+    errorText.innerText = error;
 }
-
 
 let slideIndex = 0;
 const selectItem = (event, img) => {
@@ -107,7 +106,6 @@ const createSlider = () => {
         }, duration);
     }
 }
-
 
 // change slider index 
 const changeItem = index => {
