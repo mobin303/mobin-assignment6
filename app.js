@@ -42,7 +42,7 @@ const getImages = (query) => {
     fetch(url)
         .then(response => response.json())
         .then(data => showImages(data.hits))
-        .catch(err => console.log(err))
+        .catch(error => displayErr('Something Went Wrong!!! Please try again',error))
 }
 //spinner 
 const spinner = (show) => {
@@ -54,7 +54,11 @@ const spinner = (show) => {
         loading.classList.add('d-none');
     }
 }
-
+// error show
+const displayErr= (error) =>{
+   const errorText= document.getElementById('error');
+   errorText.innerText= error;
+}
 
 
 let slideIndex = 0;
